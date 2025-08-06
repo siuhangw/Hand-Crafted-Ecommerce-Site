@@ -18,3 +18,55 @@ This project is a part of my learning process, and I want to make it scaleable a
    8. **Localization Testing**: These are things that are important but not as critical as the MVP requirements.
    9. **Regression Testing**: These are things that are important but not as critical as the MVP requirements.
    10. **Acceptance Testing**: These are things that are important but not as critical as the MVP requirements.
+   
+### Test Plan
+1. Cart Logic (cart.js)
+What to test:
+
+Adding items to cart: Ensure items are added correctly, quantities are updated, and duplicates are handled.
+Removing items from cart: Ensure items are removed by ID and cart updates as expected.
+Cart state management: Test that the cart reflects the correct state after add/remove operations.
+Why:
+This is core business logic. Bugs here can break the shopping experience and cause user frustration or data loss.
+
+2. Product Data (products.js)
+What to test:
+
+Product lookup: Ensure products can be found by ID and have correct properties (title, price, etc.).
+Why:
+Accurate product data is essential for displaying correct information and processing orders.
+
+3. UI Rendering (checkout.js)
+What to test:
+
+Cart rendering: Test that the cart displays the correct items, quantities, and prices.
+Empty cart state: Ensure the empty cart message appears when appropriate.
+Remove button functionality: Simulate clicks and verify that items are removed and UI updates.
+Why:
+UI bugs can confuse users or prevent them from completing purchases.
+
+4. Event Handling
+What to test:
+
+Button click events: Ensure event listeners are attached and trigger the correct logic.
+Re-rendering: After cart changes, verify that the UI updates and listeners are re-attached.
+Why:
+Event handling is critical for interactive features like removing items from the cart.
+
+5. Edge Cases
+What to test:
+
+Removing non-existent items: Ensure the app handles attempts to remove items not in the cart gracefully.
+Cart with invalid product IDs: Test how the UI and logic handle missing or corrupted product data.
+Why:
+Testing edge cases ensures robustness and prevents crashes or inconsistent states.
+
+Summary Table
+Area	What to Test	Why
+1. Cart Logic	Add/remove/update items	Core business logic
+2. Product Data	Product lookup by ID	Accurate display and processing
+3. UI Rendering	Cart display, empty state, updates	User experience
+4. Event Handling	Button clicks, re-rendering	Interactivity
+5. Edge Cases	Invalid removals, missing products	Robustness
+### Recommendation:
+Start by writing unit tests for cart logic and product lookup. Then, use integration or UI tests (e.g., with Jest + jsdom, or Cypress for end-to-end) to test rendering and event handling.
