@@ -1,7 +1,11 @@
 import { products } from "../data/products.js"; 
 import { Cart, deleteFromCart } from "../scripts/cart.js";
-function renderCartList() {
+export function renderCartList() {
   let cartListContainer = document.querySelector("#cart-list");
+  if (!cartListContainer) {
+    console.warn('Cart list container not found in DOM.');
+    return;
+  }
   let cartListHtml = '';
   if (Cart.length === 0) {
       // Cart is empty, displaying a message.
@@ -9,7 +13,7 @@ function renderCartList() {
       document.querySelector("#cart-list").innerHTML = "<p>Your cart is empty.</p>";
     } 
   else {
-    console.log(`You have ${Cart.length} items and ${Cart.reduce((total, item) => total + item.quantity, 0)} units in your cart, please review them before proceeding to checkout.`);
+    console.log(`You have ${Cart.length} items and ${Cart.reduce((total, item) => total + item.quantity, 0)} units in your cart.`);
     Cart.forEach(item => {
       const matchedProduct = products.find(p => p.id === item.id);
       if (!matchedProduct) {

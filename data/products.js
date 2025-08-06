@@ -17,6 +17,8 @@ export const products = [
   {
     id: '282fa5e6',
     image: 'images/product-3.png',
+    title: 'Samsung galaxy M31',
+    price: 250,
   },
   {
     id: 'b0c1d2e3',
@@ -32,8 +34,7 @@ export const products = [
   }
 ]
 
-export function loadProducts() {
-
+export function renderProductGrid() {
   products.forEach(item => {
     // Data Checking
     console.log(`
@@ -54,6 +55,4 @@ export function loadProducts() {
         <br>
       </div>`
   });
-
-  console.log("Loading products template...");
 }
