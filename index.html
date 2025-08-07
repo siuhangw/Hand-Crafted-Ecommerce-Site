@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><title>Handcrafted Ecommerce Website</title></head>
-  <link rel="stylesheet" href="styles/global.css"></link>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handcrafted Ecommerce Website</title>
+    <link rel="stylesheet" href="styles/global.css">
+  </head>
   <body>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="checkout.html">Checkout</a>
-    </nav>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="checkout.html">Checkout</a>
+      </nav>
+    </header>
     
-    <section>
-      <header>
-        <h1>Home</h1>
-      </header>
-    </section>
+    <main>
+      <section class="hero">
+        <h1>Welcome to Our Store</h1>
+        <p>Discover high-quality products at great prices</p>
+      </section>
 
-    <section>
-      <h2>Products</h2>
-      <div id="product-list"></div>
-    </section>
+      <section class="products">
+        <h2>Our Products</h2>
+        <div id="product-list" class="product-grid"></div>
+      </section>
+    </main>
     
     <script type="module" src="./scripts/index.js"></script>
   </body>
