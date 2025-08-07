@@ -1,4 +1,4 @@
-import { products } from "../data/products.js"; 
+import { PRODUCTS as PRODUCTS } from "../data/products.js"; 
 import { Cart, deleteFromCart } from "../scripts/cart.js";
 export function renderCartList() {
   let cartListContainer = document.querySelector("#cart-list");
@@ -15,7 +15,7 @@ export function renderCartList() {
   else {
     console.log(`You have ${Cart.length} items and ${Cart.reduce((total, item) => total + item.quantity, 0)} units in your cart.`);
     Cart.forEach(item => {
-      const matchedProduct = products.find(p => p.id === item.id);
+      const matchedProduct = PRODUCTS.find(p => p.id === item.id);
       if (!matchedProduct) {
         console.error(`Product with ID ${item.id} not found in products list.`);
         return;

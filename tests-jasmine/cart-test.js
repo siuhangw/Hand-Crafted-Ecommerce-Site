@@ -1,5 +1,5 @@
 import { Cart, addToCart, deleteFromCart } from '../scripts/cart.js';
-import { products } from '../data/products.js';
+import { PRODUCTS } from '../data/products.js';
 
 describe('Cart Logic', () => {
   beforeEach(() => {
@@ -8,7 +8,7 @@ describe('Cart Logic', () => {
   });
 
   it('should add a product to the cart', () => {
-    const productId = products[0].id;
+    const productId = PRODUCTS[0].id;
     addToCart(productId);
     expect(Cart.length).toBe(1);
     expect(Cart[0].id).toBe(productId);
@@ -16,7 +16,7 @@ describe('Cart Logic', () => {
   });
 
   it('should increase quantity if the same product is added again', () => {
-    const productId = products[0].id;
+    const productId = PRODUCTS[0].id;
     addToCart(productId);
     addToCart(productId);
     expect(Cart.length).toBe(1);
@@ -24,8 +24,8 @@ describe('Cart Logic', () => {
   });
 
   it('should add multiple different products', () => {
-    const id1 = products[0].id;
-    const id2 = products[1].id;
+    const id1 = PRODUCTS[0].id;
+    const id2 = PRODUCTS[1].id;
     addToCart(id1);
     addToCart(id2);
     expect(Cart.length).toBe(2);
@@ -34,7 +34,7 @@ describe('Cart Logic', () => {
   });
 
   it('should remove a product from the cart', () => {
-    const productId = products[0].id;
+    const productId = PRODUCTS[0].id;
     addToCart(productId);
     deleteFromCart(productId);
     expect(Cart.find(item => item.id === productId)).toBeUndefined();
@@ -42,7 +42,7 @@ describe('Cart Logic', () => {
   });
 
   it('should do nothing if removing a product not in the cart', () => {
-    const productId = products[0].id;
+    const productId = PRODUCTS[0].id;
     deleteFromCart(productId);
     expect(Cart.length).toBe(0);
   });

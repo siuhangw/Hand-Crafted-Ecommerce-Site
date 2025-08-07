@@ -1,5 +1,5 @@
 import { Cart, deleteFromCart } from '../scripts/cart.js';
-import { products } from '../data/products.js';
+import { PRODUCTS as PRODUCTS } from '../data/products.js';
 import { renderCartList } from '../scripts/checkout.js';
 
 describe('Checkout UI', () => {
@@ -31,15 +31,15 @@ describe('Checkout UI', () => {
   });
 
   it('should render products in the cart', () => {
-    Cart.push({ id: products[0].id, quantity: 2 });
+    Cart.push({ id: PRODUCTS[0].id, quantity: 2 });
     renderCartList();
-    expect(cartListContainer.innerHTML).toContain(products[0].title);
+    expect(cartListContainer.innerHTML).toContain(PRODUCTS[0].title);
     expect(cartListContainer.innerHTML).toContain('x2');
   });
 
   it('should remove product from cart when remove button is clicked', () => {
     // Arrange: Add a product to the cart and render
-    Cart.push({ id: products[0].id, quantity: 1 });
+    Cart.push({ id: PRODUCTS[0].id, quantity: 1 });
     renderCartList();
 
     // Act: Simulate click on the remove button
