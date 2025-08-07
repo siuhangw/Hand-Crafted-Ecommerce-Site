@@ -34,7 +34,7 @@ describe('Checkout UI', () => {
     Cart.push({ id: PRODUCTS[0].id, quantity: 2 });
     renderCartList();
     expect(cartListContainer.innerHTML).toContain(PRODUCTS[0].title);
-    expect(cartListContainer.innerHTML).toContain('x2');
+    expect(cartListContainer.innerHTML).toContain('× 2');
   });
 
   it('should remove product from cart when remove button is clicked', () => {

@@ -1,0 +1,28 @@
+{
+  "name": "handcrafted-ecommerce-site",
+  "version": "1.0.0",
+  "description": "A handcrafted ecommerce website built from scratch with HTML, CSS, and JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "test": "open tests-jasmine/SpecRunner.html",
+    "lint": "echo 'No linter configured yet'",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "ecommerce",
+    "javascript",
+    "html",
+    "css",
+    "handcrafted",
+    "vanilla-js"
+  ],
+  "author": "siuhangw",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siuhangw/Hand-Crafted-Ecommerce-Site.git"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
