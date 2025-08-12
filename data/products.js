@@ -26,7 +26,7 @@ export function renderProductGrid() {
           <p class="product-id">${item.id}</p>
           <h3 class="product-title">${item.title}</h3>
           <p class="product-price">$${item.price}</p>
-          <button class="add-to-cart js-add-to-cart" data-id="${item.id}")">Add to Cart</button>
+          <button class="add-to-cart js-add-to-cart" data-id="${item.id}">Add to Cart</button>
         </div>
         <br>
         <br>
